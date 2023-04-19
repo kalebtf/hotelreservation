@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Reservation {
+    private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
 
     private Integer id;
     private String clientFullName;
@@ -13,15 +14,14 @@ public class Reservation {
 
     // Constructors, getters, and setters
 
+    public Reservation() {
+        this.id = ID_GENERATOR.incrementAndGet();
+    }
 
-
-    public Reservation(Integer id, String clientFullName, Integer roomNumber, List<LocalDate> reservationDates) {
-        this.id = id;
+    public Reservation(String clientFullName, Integer roomNumber, List<LocalDate> reservationDates) {
+        this.id = ID_GENERATOR.incrementAndGet();
         this.clientFullName = clientFullName;
         this.roomNumber = roomNumber;
-        zz::!
-            :
-
         this.reservationDates = reservationDates;
     }
 
