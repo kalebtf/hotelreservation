@@ -14,7 +14,6 @@ public class ReservationServiceImpl implements ReservationService {
     public ReservationServiceImpl(ReservationRepository reservationRepository) {
         this.reservationRepository = reservationRepository;
     }
-
     @Override
     public Reservation create(Reservation reservation) {
         return reservationRepository.save(reservation);
