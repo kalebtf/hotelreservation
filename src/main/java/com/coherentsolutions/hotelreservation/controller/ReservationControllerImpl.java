@@ -13,15 +13,9 @@ public class ReservationControllerImpl implements ReservationController{
     private final ReservationService reservationService;
 
 
-
     public ReservationControllerImpl(ReservationService reservationService) {
         this.reservationService = reservationService;
     }
-
-//    @Autowired
-//    public ReservationController(ReservationService reservationService) {
-//        this.reservationService = reservationService;
-//    }
 
     @Override
     @PostMapping
