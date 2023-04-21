@@ -18,21 +18,21 @@ public class ReservationControllerImpl implements ReservationController{
     }
 
     @Override
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Reservation> create(@RequestBody Reservation reservation) {
         Reservation createdReservation = reservationService.create(reservation);
         return ResponseEntity.ok(createdReservation);
     }
 
     @Override
-    @GetMapping
+    @GetMapping("/getall")
     public ResponseEntity<List<Reservation>> getAll() {
         List<Reservation> reservations = reservationService.getAll();
         return ResponseEntity.ok(reservations);
     }
 
     @Override
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<Reservation> getById(@PathVariable Integer id) {
         Reservation reservation = reservationService.getById(id);
         if (reservation != null) {
@@ -43,7 +43,7 @@ public class ReservationControllerImpl implements ReservationController{
     }
 
     @Override
-    @PutMapping("/{id}")
+    @PutMapping("update/{id}")
     public ResponseEntity<Reservation> update(@PathVariable Integer id, @RequestBody Reservation reservation) {
         reservation.setId(id);
         Reservation updatedReservation = reservationService.update(reservation);
